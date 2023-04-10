@@ -1,0 +1,165 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from OSSSubscriberBeanService WSDL service -->
+
+  <service name="SubscriberService" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="SubscriberService"/>
+      <parameter name="wsdlServiceElement" value="OSSSubscriberBeanService"/>
+      <parameter name="schemaUnqualified" value="http://dataType.agent.nms.samsung.com"/>
+      <parameter name="wsdlServicePort" value="SubscriberService"/>
+      <parameter name="className" value="SubscriberService.SubscriberServiceSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="OSSSubscriberBean"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:PbxGrpLineInfo"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpLineInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:ArrayOfDn"
+        type="java:com.samsung.nms.agent.dataType.Dn[]"
+        innerType="cmp-ns:Dn" xmlns:cmp-ns="http://dataType.agent.nms.samsung.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:SetSlnInfo"
+        type="java:com.samsung.nms.agent.dataType.SetSlnInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:ArrayOfPbxGrpLineInfo"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpLineInfo[]"
+        innerType="cmp-ns:PbxGrpLineInfo" xmlns:cmp-ns="http://dataType.agent.nms.samsung.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:OneOfSsvcInfo"
+        type="java:com.samsung.nms.agent.dataType.OneOfSsvcInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:PbxGrpLineResultList"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpLineResultList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:SsvcInfoList"
+        type="java:com.samsung.nms.agent.dataType.SsvcInfoList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:PbxGrpInfo"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:Dn"
+        type="java:com.samsung.nms.agent.dataType.Dn"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:ArrayOfPbxGrpInfo"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpInfo[]"
+        innerType="cmp-ns:PbxGrpInfo" xmlns:cmp-ns="http://dataType.agent.nms.samsung.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:PbxGrpInfoList"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpInfoList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:SsvcInfo"
+        type="java:com.samsung.nms.agent.dataType.SsvcInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:SlnInfo"
+        type="java:com.samsung.nms.agent.dataType.SlnInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:SubsResObj"
+        type="java:com.samsung.nms.agent.dataType.SubsResObj"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:ArrayOfSsvcInfo"
+        type="java:com.samsung.nms.agent.dataType.SsvcInfo[]"
+        innerType="cmp-ns:SsvcInfo" xmlns:cmp-ns="http://dataType.agent.nms.samsung.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:PbxGrpLineResult"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpLineResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:ArrayOfPbxGrpLineResult"
+        type="java:com.samsung.nms.agent.dataType.PbxGrpLineResult[]"
+        innerType="cmp-ns:PbxGrpLineResult" xmlns:cmp-ns="http://dataType.agent.nms.samsung.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://dataType.agent.nms.samsung.com"
+        qname="ns:SubsResultInfo"
+        type="java:com.samsung.nms.agent.dataType.SubsResultInfo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>
