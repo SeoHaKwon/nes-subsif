@@ -1,0 +1,3538 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="SubscriberService" xmlns:intf="SubscriberService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://dataType.agent.nms.samsung.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="SubscriberService">
+        
+  
+  
+  
+  <!--WSDL created by Apache Axis version: 1.2
+Built on May 03, 2005 (02:20:24 EDT)-->
+         
+  
+  
+  
+  <wsdl:types>
+                  
+    
+    
+    
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dataType.agent.nms.samsung.com">
+                           
+      
+      
+      
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="soap-encoding.xsd"/>
+                           
+      
+      
+      
+      <complexType name="Dn">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="dn" nillable="true" type="soapenc:string"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="ArrayOfDn">
+                                    
+        
+        
+        
+        <complexContent>
+                                             
+          
+          
+          
+          <restriction base="soapenc:Array">
+                                                      
+            
+            
+            
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Dn[]"/>
+                                                     
+          
+          
+          
+          </restriction>
+                                            
+        
+        
+        
+        </complexContent>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="SsvcInfo">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="node" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="abd" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="abs" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="acr" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ascfu" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="arr" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="biz" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cabs" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="caw" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cc" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ccw" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cdnd" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cfcon" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cfna" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cfob" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cfu" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cid" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cidb" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cidf" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cidp" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="crr" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cru" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="dnd" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="htl" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="iam" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lnp" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="mal" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="onc" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="tms" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="twc" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="wml" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="wkp" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="arrayOfDn" type="tns1:ArrayOfDn"/>
+                                             
+          
+          
+          
+          <element name="ars" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="scr" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="clip" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="clir" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cliro" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ddi" nillable="true" type="soapenc:string"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="SlnInfo">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="emsId" nillable="true" type="soapenc:int"/>
+                                             
+          
+          
+          
+          <element name="col" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="dn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="mgId" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="pln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="card" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="link" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="type" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="dl" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cbt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ansg" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="tb" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cinh" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="mblk" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ocha" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="tcha" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="flat" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ngrp" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="rc" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="dtt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="sgn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="obs" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="trc" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="oport" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cport" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="pror" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ssvcInfo" nillable="true" type="tns1:SsvcInfo"/>
+                                             
+          
+          
+          
+          <element name="selPfx" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ctrx" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ctrxgId" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="nrbt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cnt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="gdn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="priCid" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="trafType" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lnpDn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="intfId" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cbType" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ansgType" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="asGrpId" nillable="true" type="soapenc:string"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="OneOfSsvcInfo">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="dn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="tdn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="tmsTimer" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="odn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="absTime" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cabsTime" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="asgId" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac01" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac02" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac03" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac04" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac05" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac06" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac07" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac08" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac09" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac10" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac11" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac12" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac13" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac14" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac15" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac16" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac17" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac18" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac19" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ac20" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="item" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="value" nillable="true" type="soapenc:string"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="ArrayOfSsvcInfo">
+                                    
+        
+        
+        
+        <complexContent>
+                                             
+          
+          
+          
+          <restriction base="soapenc:Array">
+                                                      
+            
+            
+            
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:SsvcInfo[]"/>
+                                                     
+          
+          
+          
+          </restriction>
+                                            
+        
+        
+        
+        </complexContent>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="SsvcInfoList">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="emsId" nillable="true" type="soapenc:int"/>
+                                             
+          
+          
+          
+          <element name="col" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="oneOfSsvcInfo" type="tns1:OneOfSsvcInfo"/>
+                                             
+          
+          
+          
+          <element name="arrayOfSsvcInfo" type="tns1:ArrayOfSsvcInfo"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="PbxGrpLineInfo">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="lln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="mgId" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="pln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lnp_dn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="dn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ln_sts" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="call_sts" nillable="true" type="soapenc:string"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="ArrayOfPbxGrpLineInfo">
+                                    
+        
+        
+        
+        <complexContent>
+                                             
+          
+          
+          
+          <restriction base="soapenc:Array">
+                                                      
+            
+            
+            
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:PbxGrpLineInfo[]"/>
+                                                     
+          
+          
+          
+          </restriction>
+                                            
+        
+        
+        
+        </complexContent>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="PbxGrpInfo">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="type" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="gdn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lnp_dn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="gln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ptr" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="hunt_type" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cha_type" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ansg_type" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="busy" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="total" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="arrayOfPbxGrpLineInfo" type="tns1:ArrayOfPbxGrpLineInfo"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="ArrayOfPbxGrpInfo">
+                                    
+        
+        
+        
+        <complexContent>
+                                             
+          
+          
+          
+          <restriction base="soapenc:Array">
+                                                      
+            
+            
+            
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:PbxGrpInfo[]"/>
+                                                     
+          
+          
+          
+          </restriction>
+                                            
+        
+        
+        
+        </complexContent>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="PbxGrpInfoList">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="emsId" nillable="true" type="soapenc:int"/>
+                                             
+          
+          
+          
+          <element name="col" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="arrayOfPbxGrpInfo" type="tns1:ArrayOfPbxGrpInfo"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="PbxGrpLineResult">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="result" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="reason" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="gdn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="idn" nillable="true" type="soapenc:string"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="ArrayOfPbxGrpLineResult">
+                                    
+        
+        
+        
+        <complexContent>
+                                             
+          
+          
+          
+          <restriction base="soapenc:Array">
+                                                      
+            
+            
+            
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:PbxGrpLineResult[]"/>
+                                                     
+          
+          
+          
+          </restriction>
+                                            
+        
+        
+        
+        </complexContent>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="PbxGrpLineResultList">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="emsId" nillable="true" type="soapenc:int"/>
+                                             
+          
+          
+          
+          <element name="col" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="arrayOfPbxGrpLineResult" type="tns1:ArrayOfPbxGrpLineResult"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="SubsResObj">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element maxOccurs="1" minOccurs="0" name="slnInfo" type="tns1:SlnInfo"/>
+                                             
+          
+          
+          
+          <element maxOccurs="1" minOccurs="0" name="ssvcInfoList" type="tns1:SsvcInfoList"/>
+                                             
+          
+          
+          
+          <element maxOccurs="1" minOccurs="0" name="pbxGrpInfoList" type="tns1:PbxGrpInfoList"/>
+                                             
+          
+          
+          
+          <element maxOccurs="1" minOccurs="0" name="pbxGrpLineInfo" type="tns1:PbxGrpLineInfo"/>
+                                             
+          
+          
+          
+          <element maxOccurs="1" minOccurs="0" name="PbxGrpLineResultList" nillable="true" type="tns1:PbxGrpLineResultList"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="SubsResultInfo">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="result" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="failReason" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="SubsResObj" nillable="true" type="tns1:SubsResObj"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                           
+      
+      
+      
+      <complexType name="SetSlnInfo">
+                                    
+        
+        
+        
+        <sequence>
+                                             
+          
+          
+          
+          <element name="dn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="mgId" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="pln" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="lt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="dl" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cbt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ansg" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="tb" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cinh" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ocha" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="tcha" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="flat" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ngrp" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="rc" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="dtt" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="sgn" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="obs" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="trc" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="oport" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="cport" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="pror" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="mblk" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="selPfx" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ctrx" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="ctrxgId" nillable="true" type="soapenc:string"/>
+                                             
+          
+          
+          
+          <element name="nrbt" nillable="true" type="soapenc:string"/>
+                                            
+        
+        
+        
+        </sequence>
+                                   
+      
+      
+      
+      </complexType>
+                          
+    
+    
+    
+    </schema>
+                 
+  
+  
+  
+  </wsdl:types>
+           
+  
+  
+  
+  <wsdl:message name="dactSsvcResponse">
+                      
+    
+    
+    
+    <wsdl:part name="dactSsvcReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="setSlnRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="setSln" type="tns1:SetSlnInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="dltPbxLineRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="type" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="iln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="idn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="mgId" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="pln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="cnt" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="card" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="link" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="crteSlnResponse">
+                      
+    
+    
+    
+    <wsdl:part name="crteSlnReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="getPbxGrpRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="type" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="mode" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="self" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="regSsvcRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ssvc" type="tns1:SsvcInfo"/>
+                      
+    
+    
+    
+    <wsdl:part name="tdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="odn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="mode" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ac" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="time" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="tmstmr" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="asgId" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="sc" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ddiCnt" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="getSsvcInfoResponse">
+                      
+    
+    
+    
+    <wsdl:part name="getSsvcInfoReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="actSsvcRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ssvc" type="tns1:SsvcInfo"/>
+                      
+    
+    
+    
+    <wsdl:part name="tmstmr" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="cancSsvcResponse">
+                      
+    
+    
+    
+    <wsdl:part name="cancSsvcReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="regSsvcResponse">
+                      
+    
+    
+    
+    <wsdl:part name="regSsvcReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="getSlnInfoRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="mgId" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="pln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="card" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="link" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="lln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="cnt" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="mode" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="chgPbxGrpRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="type" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="hunt" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="cha" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ansg" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="getSsvcInfoRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="mgId" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ssvc" type="tns1:SsvcInfo"/>
+                      
+    
+    
+    
+    <wsdl:part name="type" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="setSlnResponse">
+                      
+    
+    
+    
+    <wsdl:part name="setSlnReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="chgPbxGrpResponse">
+                      
+    
+    
+    
+    <wsdl:part name="chgPbxGrpReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="crtePbxLineResponse">
+                      
+    
+    
+    
+    <wsdl:part name="crtePbxLineReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="getPbxGrpResponse">
+                      
+    
+    
+    
+    <wsdl:part name="getPbxGrpReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="regCdnAnmRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="nAc" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="nPfx" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="nDn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ci" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="crteSlnRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="sln" type="tns1:SlnInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="regCdnAnmResponse">
+                      
+    
+    
+    
+    <wsdl:part name="regCdnAnmReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="crtePbxGrpRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="type" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="hunt" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="cha" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ansg" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="dltPbxGrpRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="type" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gln" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="dltSlnRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="cnt" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="crtePbxGrpResponse">
+                      
+    
+    
+    
+    <wsdl:part name="crtePbxGrpReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="dltSlnResponse">
+                      
+    
+    
+    
+    <wsdl:part name="dltSlnReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="actSsvcResponse">
+                      
+    
+    
+    
+    <wsdl:part name="actSsvcReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="crtePbxLineRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="type" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="gln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="iln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="idn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="mgId" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="pln" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="cnt" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="card" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="link" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="dltPbxGrpResponse">
+                      
+    
+    
+    
+    <wsdl:part name="dltPbxGrpReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="dactSsvcRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ssvc" type="tns1:SsvcInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="cancSsvcRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="ssvc" type="tns1:SsvcInfo"/>
+                      
+    
+    
+    
+    <wsdl:part name="ac" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="tdn" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="time" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="sc" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="cancCdnAnmRequest">
+                      
+    
+    
+    
+    <wsdl:part name="emsId" type="xsd:int"/>
+                      
+    
+    
+    
+    <wsdl:part name="col" type="soapenc:string"/>
+                      
+    
+    
+    
+    <wsdl:part name="dn" type="soapenc:string"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="dltPbxLineResponse">
+                      
+    
+    
+    
+    <wsdl:part name="dltPbxLineReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="getSlnInfoResponse">
+                      
+    
+    
+    
+    <wsdl:part name="getSlnInfoReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:message name="cancCdnAnmResponse">
+                      
+    
+    
+    
+    <wsdl:part name="cancCdnAnmReturn" type="tns1:SubsResultInfo"/>
+                   
+  
+  
+  
+  </wsdl:message>
+           
+  
+  
+  
+  <wsdl:portType name="OSSSubscriberBean">
+                      
+    
+    
+    
+    <wsdl:operation name="crteSln" parameterOrder="emsId col sln">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:crteSlnRequest" name="crteSlnRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:crteSlnResponse" name="crteSlnResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dltSln" parameterOrder="emsId col dn cnt">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:dltSlnRequest" name="dltSlnRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:dltSlnResponse" name="dltSlnResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="setSln" parameterOrder="emsId col setSln">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:setSlnRequest" name="setSlnRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:setSlnResponse" name="setSlnResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="getSlnInfo" parameterOrder="emsId col dn mgId pln card link lln cnt mode">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:getSlnInfoRequest" name="getSlnInfoRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:getSlnInfoResponse" name="getSlnInfoResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="regSsvc" parameterOrder="emsId col dn ssvc tdn odn mode ac time tmstmr asgId sc ddiCnt">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:regSsvcRequest" name="regSsvcRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:regSsvcResponse" name="regSsvcResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="cancSsvc" parameterOrder="emsId col dn ssvc ac tdn time sc">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:cancSsvcRequest" name="cancSsvcRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:cancSsvcResponse" name="cancSsvcResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="actSsvc" parameterOrder="emsId col dn ssvc tmstmr">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:actSsvcRequest" name="actSsvcRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:actSsvcResponse" name="actSsvcResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dactSsvc" parameterOrder="emsId col dn ssvc">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:dactSsvcRequest" name="dactSsvcRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:dactSsvcResponse" name="dactSsvcResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="regCdnAnm" parameterOrder="emsId col dn nAc nPfx nDn ci">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:regCdnAnmRequest" name="regCdnAnmRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:regCdnAnmResponse" name="regCdnAnmResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="cancCdnAnm" parameterOrder="emsId col dn">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:cancCdnAnmRequest" name="cancCdnAnmRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:cancCdnAnmResponse" name="cancCdnAnmResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="getSsvcInfo" parameterOrder="emsId col dn mgId ssvc type">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:getSsvcInfoRequest" name="getSsvcInfoRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:getSsvcInfoResponse" name="getSsvcInfoResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="crtePbxGrp" parameterOrder="emsId col type gdn gln hunt cha ansg">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:crtePbxGrpRequest" name="crtePbxGrpRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:crtePbxGrpResponse" name="crtePbxGrpResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="crtePbxLine" parameterOrder="emsId col type gdn gln iln idn mgId pln cnt card link">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:crtePbxLineRequest" name="crtePbxLineRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:crtePbxLineResponse" name="crtePbxLineResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dltPbxGrp" parameterOrder="emsId col type gdn gln">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:dltPbxGrpRequest" name="dltPbxGrpRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:dltPbxGrpResponse" name="dltPbxGrpResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dltPbxLine" parameterOrder="emsId col type gdn gln iln idn mgId pln cnt card link">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:dltPbxLineRequest" name="dltPbxLineRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:dltPbxLineResponse" name="dltPbxLineResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="chgPbxGrp" parameterOrder="emsId col type gdn gln hunt cha ansg">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:chgPbxGrpRequest" name="chgPbxGrpRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:chgPbxGrpResponse" name="chgPbxGrpResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="getPbxGrp" parameterOrder="emsId col type gdn gln mode self">
+                                 
+      
+      
+      
+      <wsdl:input message="impl:getPbxGrpRequest" name="getPbxGrpRequest"/>
+                                 
+      
+      
+      
+      <wsdl:output message="impl:getPbxGrpResponse" name="getPbxGrpResponse"/>
+                              
+    
+    
+    
+    </wsdl:operation>
+                   
+  
+  
+  
+  </wsdl:portType>
+           
+  
+  
+  
+  <wsdl:binding name="SubscriberServiceSoapBinding" type="impl:OSSSubscriberBean">
+                      
+    
+    
+    
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+                      
+    
+    
+    
+    <wsdl:operation name="crteSln">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="crteSlnRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="crteSlnResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dltSln">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="dltSlnRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="dltSlnResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="setSln">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="setSlnRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="setSlnResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="getSlnInfo">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="getSlnInfoRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="getSlnInfoResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="regSsvc">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="regSsvcRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="regSsvcResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="cancSsvc">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="cancSsvcRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="cancSsvcResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="actSsvc">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="actSsvcRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="actSsvcResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dactSsvc">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="dactSsvcRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="dactSsvcResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="regCdnAnm">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="regCdnAnmRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="regCdnAnmResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="cancCdnAnm">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="cancCdnAnmRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="cancCdnAnmResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="getSsvcInfo">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="getSsvcInfoRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="getSsvcInfoResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="crtePbxGrp">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="crtePbxGrpRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="crtePbxGrpResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="crtePbxLine">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="crtePbxLineRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="crtePbxLineResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dltPbxGrp">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="dltPbxGrpRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="dltPbxGrpResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="dltPbxLine">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="dltPbxLineRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="dltPbxLineResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="chgPbxGrp">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="chgPbxGrpRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="chgPbxGrpResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                      
+    
+    
+    
+    <wsdl:operation name="getPbxGrp">
+                                 
+      
+      
+      
+      <wsdlsoap:operation soapAction=""/>
+                                 
+      
+      
+      
+      <wsdl:input name="getPbxGrpRequest">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:input>
+                                 
+      
+      
+      
+      <wsdl:output name="getPbxGrpResponse">
+                                            
+        
+        
+        
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="SubscriberService" use="encoded"/>
+                                         
+      
+      
+      
+      </wsdl:output>
+                              
+    
+    
+    
+    </wsdl:operation>
+                   
+  
+  
+  
+  </wsdl:binding>
+           
+  
+  
+  
+  <wsdl:service name="OSSSubscriberBeanService">
+                      
+    
+    
+    
+    <wsdl:port binding="impl:SubscriberServiceSoapBinding" name="SubscriberService">
+                                 
+      
+      
+      
+      <wsdlsoap:address location="http://tempuri.org/subsif/services/SubscriberService"/>
+                              
+    
+    
+    
+    </wsdl:port>
+                   
+  
+  
+  
+  </wsdl:service>
+        
+
+
+
+</wsdl:definitions>
