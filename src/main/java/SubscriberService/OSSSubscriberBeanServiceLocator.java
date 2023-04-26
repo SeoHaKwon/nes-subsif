@@ -10,7 +10,6 @@ package SubscriberService;
 public class OSSSubscriberBeanServiceLocator extends org.apache.axis.client.Service implements SubscriberService.OSSSubscriberBeanService {
 
     public OSSSubscriberBeanServiceLocator() {
- 		System.out.println("endpoint?");
     }
 
 
